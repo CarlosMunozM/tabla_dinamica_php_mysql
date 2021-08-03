@@ -1,3 +1,9 @@
+<?php
+	
+	require_once "../php/conexion.php";
+	$conexion = conexion();
+?>
+
 
 <div class="row">
 	<div class="col-sm-12">
@@ -18,11 +24,21 @@
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
+
+			<?php
+
+				$sql = "SELECT * FROM personas";
+				$result = mysqli_query($conexion, $sql);
+
+				while ($datos = mysqli_fetch_row($result)) 
+				{
+			?>
+
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td><?php echo $datos[1] ?></td>
+				<td><?php echo $datos[2] ?></td>
+				<td><?php echo $datos[3] ?></td>
+				<td><?php echo $datos[4] ?></td>
 				<td>
 					<button class="btn btn-warning bi-pencil" data-bs-toggle="modal" data-bs-target="#modalActualizar"></button>
 				</td>
@@ -30,6 +46,9 @@
 					<button class="btn btn-danger bi-trash"></button>
 				</td>
 			</tr>
+
+			<?php } ?>
+
 		</table>
 	</div>
 </div>
