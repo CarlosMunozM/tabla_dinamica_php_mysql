@@ -16,6 +16,7 @@
 		<script src="librerias/jquery-3.6.0.min.js"></script>
 		<script src="librerias/bootstrap/js/bootstrap.js"></script>
 		<script src="librerias/alertifyjs/alertify.js"></script>
+		<script src="js/funciones.js"></script>
 
 	</head>
 	<body>
@@ -95,12 +96,18 @@
 	</body>
 </html>
 
-<script type="text/javascript">
-		
+<script type="text/javascript">		
 	$(document).ready(function(){
 
 		$('#tabla').load('componentes/tabla.php');
-		
+
+		$('#btnAgregar').click(function(){
+			agregarDatos($('#txtNombreAdd').val() , $('#txtApellidoAdd').val(), $('#txtEmailAdd').val(), $('#txtTelefonoAdd').val());
+		});
+
 	});
 
 </script>
+
+
+
