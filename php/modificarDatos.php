@@ -2,13 +2,14 @@
 	
 	include("conexion.php");
 
+	$id = $_POST['id'];
 	$nombre = $_POST['nombre'];
 	$apellido = $_POST['apellido'];
 	$email = $_POST['email'];
 	$telefono = $_POST['telefono'];
 
-	$sql = "INSERT INTO personas (nombre, apellido, email, telefono)
-			VALUES ('$nombre','$apellido','$email','$telefono')";
+	$sql = "UPDATE personas SET nombre = '$nombre', apellido = '$apellido', email = '$email', telefono = '$telefono'
+			WHERE id = '$id' ";
 
 	$resultado = mysqli_query($conexion, $sql);
 

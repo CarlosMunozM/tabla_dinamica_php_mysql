@@ -9,3 +9,5 @@ create table personas(
 	telefono varchar(50),
 	primary key(id) 
 );
+
+INSERT INTO personas VALUES (NULL,'Carlos','Muñoz','correo@hotmail.com','091234567');

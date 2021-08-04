@@ -69,24 +69,24 @@
 		      </div>
 		      <div class="modal-body">
 
-		      	<input type="text" hidden="" id="txtIdPersona" name="">
+		      	<input type="text" hidden="" id="txtIdPersonaEdit" name="">
 
 		        <label>Nombre</label>
 		      	<input type="text" name="" id="txtNombreEdit" class="form-control imput-sm">
 
 		      	<label>Apellido</label>
-		      	<input type="text" name="" id="txtApellidoAddEdit" class="form-control imput-sm">
+		      	<input type="text" name="" id="txtApellidoEdit" class="form-control imput-sm">
 
 		      	<label>E-mail</label>
-		      	<input type="text" name="" id="txtEmailAddEdit" class="form-control imput-sm">
+		      	<input type="text" name="" id="txtEmailEdit" class="form-control imput-sm">
 
 		      	<label>Teléfono</label>
-		      	<input type="text" name="" id="txtTelefonoAddEdit" class="form-control imput-sm">
+		      	<input type="text" name="" id="txtTelefonoEdit" class="form-control imput-sm">
 
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizar">
-		        	Agregar
+		        	Modificar
 		        </button>
 		      </div>
 		    </div>
@@ -105,6 +105,24 @@
 			agregarDatos($('#txtNombreAdd').val() , $('#txtApellidoAdd').val(), $('#txtEmailAdd').val(), $('#txtTelefonoAdd').val());
 		});
 
+		$('#btnActualizar').click(function(){
+			modificarDatos($('#txtIdPersonaEdit').val() , $('#txtNombreEdit').val() , $('#txtApellidoEdit').val(), $('#txtEmailEdit').val(), $('#txtTelefonoEdit').val());
+		});
+
+		/*
+		$('#dt_datos').DataTable({
+			"ajax":{
+				"method":"POST",
+				"url":"mostrarDatos.php"
+			},
+			"columns":{
+				{"datos":"nombre"},
+				{"datos":"apellido"},
+				{"datos":"email"},
+				{"datos":"telefono"}
+			}
+		});
+		*/
 	});
 
 </script>
