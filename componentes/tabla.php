@@ -44,7 +44,7 @@
 					<button class="btn btn-warning bi-pencil" data-bs-toggle="modal" data-bs-target="#modalActualizar" onclick="pasarDatosModificar('<?php echo $datos[0] ?>','<?php echo $datos[1] ?>','<?php echo $datos[2] ?>','<?php echo $datos[3] ?>','<?php echo $datos[4] ?>')"></button>
 				</td>
 				<td>
-					<button class="btn btn-danger bi-trash"></button>
+					<button class="btn btn-danger bi-trash" onclick="dialogoEliminar('<?php echo $datos[0] ?>')"></button>
 				</td>
 			</tr>
 
