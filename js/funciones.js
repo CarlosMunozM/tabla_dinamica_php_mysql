@@ -2,15 +2,16 @@
 
 function agregarDatos(nombre, apellido, email, telefono){
 
-	cadena = "nombre="+ nombre +
+	datos =  "accion=agregar"+
+			 "&nombre="+ nombre +
 			 "&apellido="+ apellido +
 			 "&email="+ email +
 			 "&telefono="+ telefono;
 	
 	$.ajax({
 		type:"POST", //los parámetros NO van en la URL
-		url:"php/agregarDatos.php",
-		data: cadena,
+		url:"php/Controlador/PersonaCtrl.php",
+		data: datos,
 		success:function(result){
 			if(result==1)
 			{
@@ -27,7 +28,8 @@ function agregarDatos(nombre, apellido, email, telefono){
 
 function modificarDatos(id, nombre, apellido, email, telefono){
 
-	cadena = "id="+ id +
+	datos = "accion=actualizar"+
+			 "&id="+ id +
 			 "&nombre="+ nombre +
 			 "&apellido="+ apellido +
 			 "&email="+ email +
@@ -35,8 +37,8 @@ function modificarDatos(id, nombre, apellido, email, telefono){
 	
 	$.ajax({
 		type:"POST",
-		url:"php/modificarDatos.php",
-		data: cadena,
+		url:"php/Controlador/PersonaCtrl.php",
+		data: datos,
 		success:function(result){
 			if(result==1)
 			{
@@ -53,12 +55,13 @@ function modificarDatos(id, nombre, apellido, email, telefono){
 
 function eliminarDatos(id){
 
-	cadena = "id="+ id;
+	datos = "accion=eliminar"+
+			"&id="+ id;
 	
 	$.ajax({
 		type:"POST",
-		url:"php/eliminarDatos.php",
-		data: cadena,
+		url:"php/Controlador/PersonaCtrl.php",
+		data: datos,
 		success:function(result){
 			if(result==1)
 			{
