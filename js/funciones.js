@@ -15,7 +15,7 @@ function agregarDatos(nombre, apellido, email, telefono){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.html');
+				$('#tabla').load('componentes/tabla2.php');
 				alertify.success("Agregado con Éxito");
 			}
 			else{
@@ -42,7 +42,7 @@ function modificarDatos(id, nombre, apellido, email, telefono){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.html');
+				$('#tabla').load('componentes/tabla2.php');
 				alertify.success("Modificado con Éxito");
 			}
 			else{
@@ -65,7 +65,7 @@ function eliminarDatos(id){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.html');
+				$('#tabla').load('componentes/tabla2.php');
 				alertify.success("Eliminado con Éxito");
 			}
 			else{

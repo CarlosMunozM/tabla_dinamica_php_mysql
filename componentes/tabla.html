@@ -7,26 +7,32 @@
 			Agregar 
 			<span class="bi-plus"></span>
 		</button><br><br>
-		
-		<table id="dt_datos" class="table table-hover table-condensed table-bordered">
-			<tr>
-				<td>Nombre</td>
-				<td>Apellido</td>
-				<td>E-mail</td>
-				<td>Teléfono</td>
-				<td>Editar</td>
-				<td>Eliminar</td>
-			</tr>			
+
+		<table id="dt_datos" class="table table-hover table-condensed table-bordered table-striped" style="width:100%">
+			<thead>
+				<tr>
+					<td>Nombre</td>
+					<td>Apellido</td>
+					<td>E-mail</td>
+					<td>Teléfono</td>
+					<td>Editar</td>
+					<td>Eliminar</td>
+				</tr>
+			</thead>		
 		</table>
+
+
 	</div>
 </div>
 
 <script type="text/javascript">
 	
 	$(document).ready(function() {
+
 		llenarTabla();
+
 	});
-	
+
 	function llenarTabla(){
 
 		$.ajax({
@@ -37,7 +43,7 @@
 			success:function(datos){
 				for(var i = 0; i < datos.resultado.length; i++) {
 				    var obj = datos.resultado[i];
-				    $('#dt_datos').append('<tr>'+
+				    $('#dt_datos').append('<tbody><tr>'+
 				    	'<td>' + obj.nombre + '</td>'+
 				    	'<td>' + obj.apellido + '</td>'+
 				    	'<td>' + obj.email + '</td>'+
@@ -49,9 +55,20 @@
 				    	'<td>'+
 				    		'<button class="btn btn-danger bi-trash" onclick="dialogoEliminar('+ obj.id +')"></button>'+
 				    	'</td>'+
-				    	'</tr>');    
+				    	'</tr></tbody>');    
 				}
+
+	
+				
 			}
 		});
+		/*
+		$('#dt_datos').DataTable({
+	        responsive: true,
+	        "language": {
+                "url": "librerias/data_table/Spanish.json"
+            }
+	    });
+	    */	
 	};
 </script>

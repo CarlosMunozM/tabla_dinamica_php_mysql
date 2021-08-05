@@ -21,6 +21,19 @@
 			
 		}
 
+		function mostrarPersonas2()
+		{
+		
+			include("../php/conexion.php");
+
+			$sql = "SELECT * FROM personas";
+			$result = mysqli_query($conexion, $sql);
+
+			$conexion->close();
+			
+			return $result;
+		}
+
 		function agregarPersona(Persona $persona){
 
 			include("../conexion.php");

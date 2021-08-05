@@ -12,10 +12,22 @@
 		<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
 		<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
+		<link rel="stylesheet" type="text/css" href="librerias/data_table/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="librerias/data_table/css/dataTables.bootstrap5.min.css">
 
 		<script src="librerias/jquery-3.6.0.min.js"></script>
 		<script src="librerias/bootstrap/js/bootstrap.js"></script>
 		<script src="librerias/alertifyjs/alertify.js"></script>
+		<script src="librerias/data_table/js/jquery.dataTables.min.js"></script>
+		<script src="librerias/data_table/js/dataTables.bootstrap5.min.js"></script>
+
+		<script src="librerias/data_table/buttons/dataTables.buttons.min.js"></script>
+		<script src="librerias/data_table/buttons/jszip.min.js"></script>
+		<script src="librerias/data_table/buttons/pdfmake.min.js"></script>
+		<script src="librerias/data_table/buttons/vfs_fonts.js"></script>
+		<script src="librerias/data_table/buttons/buttons.html5.min.js"></script>
+		
+
 		<script src="js/funciones.js"></script>
 
 	</head>
@@ -32,7 +44,7 @@
 <script type="text/javascript">		
 	$(document).ready(function(){
 
-		$('#tabla').load('componentes/tabla.html');
+		$('#tabla').load('componentes/tabla2.php');
 		$('#modales').load('componentes/modales.html');
 
 	});
