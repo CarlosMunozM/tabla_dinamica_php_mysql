@@ -2,23 +2,26 @@
 	
 	class PersonaDAO{
 
-		function mostrarPersonas(Persona $persona)
+		function mostrarPersonas()
 		{
 			include("../conexion.php");
 
 			$sql = "SELECT * FROM personas";
 			$result = mysqli_query($conexion, $sql);
 
-			while ($datos = mysqli_fetch_row($result)) 
-				$arreglo['resultado'][]=array_map("utf8_encode", $datos);
+			while ($datos = mysqli_fetch_assoc($result)) 
+				$arreglo['resultado'][]=$datos;
+				//$arreglo['resultado'][]=array_map("utf8_encode", $datos);
+
+			json_encode($arreglo);
 
 			$conexion->close();
 			
-			//return json_encode($arreglo);
-			return $persona -> getNombre();
+			return json_encode($arreglo);
+			
 		}
 
-		function agregarPersonas(Persona $persona){
+		function agregarPersona(Persona $persona){
 
 			include("../conexion.php");
 
@@ -47,6 +50,20 @@
 
 			$sql = "UPDATE personas SET nombre = '$nombre', apellido = '$apellido', email = '$email', telefono = '$telefono'
 			WHERE id = '$id' ";
+
+			$resultado = mysqli_query($conexion, $sql);
+			
+			$conexion->close();
+			return $resultado;
+		}
+
+		function eliminarPersona(Persona $persona){
+
+			include("../conexion.php");
+
+			$id = $persona -> getIdPersona();
+
+			$sql = "DELETE FROM personas WHERE id = '$id' ";
 
 			$resultado = mysqli_query($conexion, $sql);
 			

@@ -8,12 +8,9 @@
 	switch ($accion) {
 		case 'mostrar':
 			
+			
 			$personaDAO = new PersonaDAO();
-			$persona = new Persona();
-
-			$persona -> setNombre("Carlos Muñoz");
-
-			echo $personaDAO->mostrarPersonas($persona);
+			echo $personaDAO->mostrarPersonas();
 
 			break;
 		
@@ -27,7 +24,7 @@
 			$persona -> setEmail($_POST['email']);
 			$persona -> setTelefono($_POST['telefono']);
 
-			$resultado = $personaDAO -> agregarPersonas($persona);
+			$resultado = $personaDAO -> agregarPersona($persona);
 
 			if($resultado == 1)
 				echo $resultado;

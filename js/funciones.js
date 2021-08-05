@@ -15,7 +15,7 @@ function agregarDatos(nombre, apellido, email, telefono){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.php');
+				$('#tabla').load('componentes/tabla.html');
 				alertify.success("Agregado con Éxito");
 			}
 			else{
@@ -42,7 +42,7 @@ function modificarDatos(id, nombre, apellido, email, telefono){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.php');
+				$('#tabla').load('componentes/tabla.html');
 				alertify.success("Modificado con Éxito");
 			}
 			else{
@@ -65,7 +65,7 @@ function eliminarDatos(id){
 		success:function(result){
 			if(result==1)
 			{
-				$('#tabla').load('componentes/tabla.php');
+				$('#tabla').load('componentes/tabla.html');
 				alertify.success("Eliminado con Éxito");
 			}
 			else{
@@ -76,7 +76,8 @@ function eliminarDatos(id){
 	});
 };
 
-function pasarDatosModificar(id,nombre, apellido, email, telefono){
+function pasarDatosModificar(id, nombre, apellido, email, telefono){
+
 	$('#txtIdPersonaEdit').val(id);
 	$('#txtNombreEdit').val(nombre);
 	$('#txtApellidoEdit').val(apellido);
