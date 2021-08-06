@@ -15,6 +15,11 @@ function agregarDatos(nombre, apellido, email, telefono){
 		success:function(result){
 			if(result==1)
 			{
+				limpiarRegistrar();
+
+				$('#divRegistrar').slideUp("slow");
+		  		$('#tabla').slideDown("slow");
+
 				$('#tabla').load('componentes/tabla2.php');
 				alertify.success("Agregado con Éxito");
 			}
@@ -91,4 +96,11 @@ function dialogoEliminar(id){
 		eliminarDatos(id);
 	}, 
 	function(){ /* alertify.error('Cancel')*/});
+};
+
+function limpiarRegistrar(){
+	$('#txtNombreAdd').val('');
+	$('#txtApellidoAdd').val('');
+	$('#txtEmailAdd').val('');
+	$('#txtTelefonoAdd').val('');
 };

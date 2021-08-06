@@ -8,7 +8,6 @@
 	switch ($accion) {
 		case 'mostrar':
 			
-			
 			$personaDAO = new PersonaDAO();
 			echo $personaDAO->mostrarPersonas();
 

@@ -11,12 +11,13 @@
 		<table id="dt_datos" class="table table-hover table-condensed table-bordered table-striped" style="width:100%">
 			<thead>
 				<tr>
-					<td>Nombre</td>
-					<td>Apellido</td>
-					<td>E-mail</td>
-					<td>Teléfono</td>
-					<td>Editar</td>
-					<td>Eliminar</td>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>E-mail</th>
+					<th>Teléfono</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
+
 				</tr>
 			</thead>		
 		</table>
@@ -31,16 +32,18 @@
 
 		llenarTabla();
 
+
 	});
 
 	function llenarTabla(){
-
 		$.ajax({
 			type:"POST",
 			url:"php/Controlador/PersonaCtrl.php",
 			data: "accion=mostrar",
+			"dataSrc": "",
 			dataType: "json",
 			success:function(datos){
+				
 				for(var i = 0; i < datos.resultado.length; i++) {
 				    var obj = datos.resultado[i];
 				    $('#dt_datos').append('<tbody><tr>'+
@@ -62,13 +65,5 @@
 				
 			}
 		});
-		/*
-		$('#dt_datos').DataTable({
-	        responsive: true,
-	        "language": {
-                "url": "librerias/data_table/Spanish.json"
-            }
-	    });
-	    */	
 	};
 </script>
