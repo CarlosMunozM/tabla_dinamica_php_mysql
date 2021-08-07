@@ -6,7 +6,8 @@
 		{
 			include("../conexion.php");
 
-			$sql = "SELECT * FROM personas";
+			//$sql = "SELECT * FROM personas";
+			$sql = "CALL mostrar_personas()";
 			$result = mysqli_query($conexion, $sql);
 
 			while ($datos = mysqli_fetch_assoc($result)) 
@@ -26,7 +27,8 @@
 		
 			include("../php/conexion.php");
 
-			$sql = "SELECT * FROM personas";
+			//$sql = "SELECT * FROM personas";
+			$sql = "CALL mostrar_personas()";
 			$result = mysqli_query($conexion, $sql);
 
 			$conexion->close();
@@ -43,8 +45,13 @@
 			$email = $persona -> getEmail();
 			$telefono = $persona -> getTelefono();
 
+			/*
 			$sql = "INSERT INTO personas (nombre, apellido, email, telefono)
 					VALUES ('$nombre','$apellido','$email','$telefono')";
+			*/
+
+			$sql = "CALL insertar_persona('$nombre', '$apellido', '$email', '$telefono')";
+	
 			$resultado = mysqli_query($conexion, $sql);
 			
 			$conexion->close();
@@ -61,8 +68,12 @@
 			$email = $persona -> getEmail();
 			$telefono = $persona -> getTelefono();
 
+			/*
 			$sql = "UPDATE personas SET nombre = '$nombre', apellido = '$apellido', email = '$email', telefono = '$telefono'
 			WHERE id = '$id' ";
+			*/
+
+			$sql = "CALL modificar_persona($id, '$nombre', '$apellido', '$email', '$telefono')";
 
 			$resultado = mysqli_query($conexion, $sql);
 			
@@ -76,7 +87,8 @@
 
 			$id = $persona -> getIdPersona();
 
-			$sql = "DELETE FROM personas WHERE id = '$id' ";
+			//$sql = "DELETE FROM personas WHERE id = '$id' ";
+			$sql = "CALL eliminar_persona($id)";
 
 			$resultado = mysqli_query($conexion, $sql);
 			
