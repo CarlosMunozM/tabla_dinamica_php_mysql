@@ -59,6 +59,12 @@
 	$(document).ready(function() {
 		$('#dt_datos').DataTable({
 	        responsive: true,
+	        destroy: true,
+	        scrollX: true,
+	        "language": {
+                "url": 	"librerias/data_table/Spanish.json"
+            },
+            dom: 'Bfrtip',
 	        buttons: [
 	        	{
 		        	text: '<i class="bi bi-person-plus"></i>',
@@ -94,12 +100,7 @@
 		        	titleAttr: 'Copiar'
 		        }
 	            
-	        ],
-	        destroy: true,
-	        "language": {
-                "url": 	"librerias/data_table/Spanish.json"
-            },
-            dom: 'Bfrtip',
+	        ]
 	    });
 		
 	});
